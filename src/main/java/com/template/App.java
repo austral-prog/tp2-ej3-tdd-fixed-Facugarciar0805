@@ -6,7 +6,18 @@ import java.util.Map;
 
 public class App {
 
+    public static Map<String, Integer> createAccount(Map<String, Integer> accounts, String account){
+        Map<String, Integer> newAccounts = new HashMap<>(accounts);
+        if (!(accounts.containsKey(account))){
+            newAccounts.put(account, 0);
+            return newAccounts;
+        }
+        else
+        {
+            return newAccounts;
+        }
 
+    }
     public static Map<String, Integer> deposit(Map<String, Integer> accounts, String account, int amount) {
 
         if (amount>=0){
@@ -18,6 +29,7 @@ public class App {
                 else{
                     newAccounts.put(entry.getKey(), entry.getValue());
                 }
+
             }
             return newAccounts;
         }
