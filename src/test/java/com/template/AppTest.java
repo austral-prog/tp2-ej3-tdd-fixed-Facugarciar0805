@@ -10,6 +10,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class AppTest {
 
     @Test
+    void testCreateNewAccount(){
+        Map<String, Integer> accounts = Map.of("mati", 10, "jaun", 20);
+        Map<String, Integer> updatedAccounts = createAccount(accounts, "nico");
+        assertEquals(0, updatedAccounts.get("nico"));
+
+    }
+    @Test
     void testDeposit() {
         Map<String, Integer> accounts = Map.of("mati", 10, "jaun", 20);
         Map<String, Integer> updatedAccounts = deposit(accounts, "mati", 5);
